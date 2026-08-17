@@ -1,0 +1,74 @@
+======================================================================
+ AES SECURITY ANALYSIS: ECB vs CBC
+======================================================================
+
+Original Plaintext:
+TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;
+
+----------------------------------------------------------------------
+AES-ECB ENCRYPTION
+----------------------------------------------------------------------
+
+ECB Ciphertext:
+c33ddfbac0bbe30bcb1975923c0b89542c93034fb7bb0f1d901192127466987ef103aca876ca826ce5258e01e9bcd1a742efd404d4ce65447225b737b4e2d7e2
+
+ECB Decrypted Plaintext:
+TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;
+
+ECB Ciphertext Blocks:
+Block 1: c33ddfbac0bbe30bcb1975923c0b8954
+Block 2: 2c93034fb7bb0f1d901192127466987e
+Block 3: f103aca876ca826ce5258e01e9bcd1a7
+Block 4: 42efd404d4ce65447225b737b4e2d7e2
+
+Total ECB Blocks: 4
+Unique ECB Blocks: 4
+
+----------------------------------------------------------------------
+AES-CBC ENCRYPTION
+----------------------------------------------------------------------
+
+CBC Initialization Vector (IV):
+f360abba3f612ba9d1ed5ac93ffc4363
+
+CBC Ciphertext:
+07d109db23a3da0e7871f333518cb1012b7944728ca4e08521bbca2b808c29dd33e0caf173425c501b3d84e78589cee93e0f05fc0c0f8d008ab731ce29fb692e
+
+CBC Decrypted Plaintext:
+TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;TEMP=30C;
+
+CBC Ciphertext Blocks:
+Block 1: 07d109db23a3da0e7871f333518cb101
+Block 2: 2b7944728ca4e08521bbca2b808c29dd
+Block 3: 33e0caf173425c501b3d84e78589cee9
+Block 4: 3e0f05fc0c0f8d008ab731ce29fb692e
+
+Total CBC Blocks: 4
+Unique CBC Blocks: 4
+
+======================================================================
+SECURITY ANALYSIS
+======================================================================
+
+ECB Observation:
+No repeated ciphertext blocks were observed.
+
+CBC Observation:
+Ciphertext blocks are different.
+The repeated plaintext pattern is hidden.
+
+======================================================================
+DECRYPTION VERIFICATION
+======================================================================
+ECB: Decryption successful.
+CBC: Decryption successful.
+
+======================================================================
+CONCLUSION
+======================================================================
+AES successfully encrypted and decrypted the given plaintext.
+ECB encrypts blocks independently, so repeated plaintext blocks can produce
+repeated ciphertext blocks and reveal structural patterns.
+CBC uses an initialization vector (IV) and chaining, reducing direct pattern
+leakage between repeated plaintext blocks.
+Therefore, the mode of operation is an important part of cryptographic design.
