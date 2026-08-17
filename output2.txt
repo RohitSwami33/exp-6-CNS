@@ -1,0 +1,96 @@
+======================================================================
+DESIGN AND ANALYSIS OF A SECURE ENCRYPTION SCHEME
+======================================================================
+
+----------------------------------------------------------------------
+1. CAESAR CIPHER
+----------------------------------------------------------------------
+Plaintext : HELLO WORLD
+Key : 3
+Ciphertext: KHOOR ZRUOG
+Decrypted : HELLO WORLD
+
+----------------------------------------------------------------------
+2. EUCLIDEAN ALGORITHM
+----------------------------------------------------------------------
+GCD(35, 26) = 1
+
+----------------------------------------------------------------------
+3. AFFINE CIPHER
+----------------------------------------------------------------------
+gcd(5, 26) = 1
+Multiplicative inverse of 5 modulo 26 = 21
+Plaintext : HELLO WORLD
+Keys : 5 8
+Ciphertext: RCLLA OAPLX
+Decrypted : HELLO WORLD
+
+----------------------------------------------------------------------
+4. VIGENERE CIPHER
+----------------------------------------------------------------------
+Plaintext : HELLO WORLD
+Key : KEY
+Ciphertext: RIJVS UYVJN
+Decrypted : HELLO WORLD
+
+----------------------------------------------------------------------
+5. CONGRUENCE RELATION
+----------------------------------------------------------------------
+29 mod 26 = 3
+29 ≡ 3 (mod 26)
+
+----------------------------------------------------------------------
+6. FERMAT'S LITTLE THEOREM
+----------------------------------------------------------------------
+3^(7-1) mod 7 = 1
+Fermat's Little Theorem verified.
+
+----------------------------------------------------------------------
+7. CHINESE REMAINDER THEOREM
+----------------------------------------------------------------------
+Given equations:
+x ≡ 2 (mod 3)
+x ≡ 3 (mod 5)
+x ≡ 2 (mod 7)
+
+CRT Solution: x = 23
+
+Verification:
+x mod 3 = 2
+x mod 5 = 3
+x mod 7 = 2
+
+----------------------------------------------------------------------
+8. AES-CBC
+----------------------------------------------------------------------
+Plaintext : HELLO WORLD
+AES Key : 0123456789ABCDEF
+IV : d816117cb56d2115cb28075c7576fafe
+Ciphertext: 58b08ae62414a333bacf018453ed16f8
+Decrypted : HELLO WORLD
+
+======================================================================
+FINAL VERIFICATION
+======================================================================
+Caesar Cipher: PASS
+Affine Cipher: PASS
+Vigenere Cipher: PASS
+AES-CBC: PASS
+
+All encryption/decryption tests completed successfully.
+
+======================================================================
+CONCLUSION
+======================================================================
+The experiment demonstrates the use of classical and modern
+cryptographic techniques.
+Caesar, Affine and Vigenere ciphers demonstrate substitution
+and poly-alphabetic encryption.
+The Euclidean algorithm is used to determine GCD and supports
+the calculation of modular inverses.
+Congruence, Fermat's Little Theorem and the Chinese Remainder
+Theorem demonstrate important mathematical foundations used
+in cryptography.
+AES-CBC demonstrates a modern symmetric-key encryption method.
+The successful decryption confirms the correctness of the
+implemented encryption and decryption procedures.
